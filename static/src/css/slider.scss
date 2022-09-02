@@ -1,0 +1,11 @@
+
+#slider_container {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr max-content;
+  width: 100%;
+  grid-gap: 5px;
+}
+
+#slider_container > input {
+  width: 100%;
+}

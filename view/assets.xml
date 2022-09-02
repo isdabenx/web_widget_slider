@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/web_widget_slider/static/src/css/slider.scss"/>
+            <script type="text/javascript" src="/web_widget_slider/static/src/js/slider.js"/>
+        </xpath>
+    </template>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_inherit_partner_form" model="ir.ui.view">
+        <field name="name">view.inherit.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="test_slider" widget="slider" colspan="2"
+                       options="{'min':0, 'max':55, 'preffix': 'primer',  'sufix': 'final', 'step': 5}" nolabel="1"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

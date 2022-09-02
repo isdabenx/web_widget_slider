@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates>
+    <t t-name="web_widget_slider">
+        <div id="slider_container">
+            <div t-esc="widget.value + widget.options.separator" id="real_value"/>
+            <div t-esc="widget.options.preffix"/>
+            <input class="js_change_slider"
+                   type="range"
+                   t-att-min="widget.options.min"
+                   t-att-max="widget.options.max"
+                   t-att-step="widget.options.step"
+                   id="input_range"
+                   t-att-tabindex="widget.attrs.tabindex"
+                   t-att-autofocus="widget.attrs.autofocus"
+                   t-att-placeholder="widget.attrs.placeholder"
+                   t-att-value="widget.value"
+                   t-att-maxlength="widget.field.size"
+                   />
+            <div t-esc="widget.options.sufix"/>
+        </div>
+    </t>
+</templates>
